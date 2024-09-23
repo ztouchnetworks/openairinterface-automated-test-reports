@@ -1,0 +1,16 @@
+# The RESULTS_DIR and HISTORY_DIR directories are taken from the shell environment.
+#   Optionally pass extra arguments through the EXTRA_ARGS variable
+#   RESULTS_DIR=path/to/reservation/directory \
+#     HISTORY_DIR=path/to/test/history/directory \
+#     EXTRA_ARGS="--job_id_jenkins 143" \
+#     docker-compose up
+services:
+  app:
+    build:
+      dockerfile: ./Dockerfile
+    command:
+      python /app/generate_oai_report.py --results_dir /target --history_dir /history ${EXTRA_ARGS:-}
+    volumes:
+      - ./:/app:ro
+      - ${RESULTS_DIR:-/tmp}:/target
+      - ${HISTORY_DIR:-/tmp}:/history
