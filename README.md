@@ -4,7 +4,7 @@ Processes results from OpenAirInterface (OAI) iPerf3 tests run via Colosseum bat
 This is used to analyze automatic OAI tests run as part of the OAI Jenkins CI, for example via [this](https://jenkins-oai.eurecom.fr/job/RAN-Trigger-NEU-CI/) job.
 
 Results of successful tests are saved in history files and used to compare new analyzed tests.
-For instance, a test is considered successful if the achieved throughput is greather than or equal to the target transmit rate (if one is specified), or of the test history (if the target transmit rate is not specified).
+For instance, a test is considered successful if the achieved throughput is greater than or equal to the target transmit rate (if one is specified), or of the test history (if the target transmit rate is not specified).
 
 The processing tool can also be called as standalone to analyze OAI results, as described below.
 Please note that in this case, `n/a` might appear in some info fields of the generated test report.
